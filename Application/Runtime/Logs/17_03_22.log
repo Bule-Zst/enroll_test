@@ -1,0 +1,750 @@
+[ 2017-03-22T12:32:32+08:00 ] 127.0.0.1 /enroll_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000085s ]
+INFO: [ app_init ] --END-- [ RunTime:0.038574s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.018754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.018941s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+NOTIC: [2] mysql_connect(): Access denied for user 'root'@'localhost' (using password: NO) D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+ERR: Access denied for user 'root'@'localhost' (using password: NO)
+
+[ 2017-03-22T12:33:03+08:00 ] 127.0.0.1 /enroll_test/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000386s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000527s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000612s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.069403s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+
+[ 2017-03-22T12:33:03+08:00 ] 127.0.0.1 /enroll_test/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000048s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001282s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001164s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001328s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Controller\UserController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000095s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\5c9ee6d19cd41add49f97afe3aef0b25.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.135424s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.135554s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.026241s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.026329s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001402s ]
+
+[ 2017-03-22T12:33:04+08:00 ] 127.0.0.1 /enroll_test/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000384s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000534s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000588s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Controller\UserController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000049s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000100s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\5c9ee6d19cd41add49f97afe3aef0b25.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006521s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006568s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000279s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000687s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000749s ]
+
+[ 2017-03-22T12:33:11+08:00 ] 127.0.0.1 /enroll_test/index.php/User/login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000311s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000426s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `registration` [ RunTime:0.087154s ]
+SQL: SELECT `password` FROM `registration` WHERE ( username = 'aaa' ) LIMIT 1   [ RunTime:0.022348s ]
+
+[ 2017-03-22T12:33:11+08:00 ] 127.0.0.1 /enroll_test/index.php/Vote/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000034s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000859s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001112s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001249s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.005030s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.038911s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 1 AND del = 0 ) LIMIT 1   [ RunTime:0.034346s ]
+SQL: SELECT * FROM `project` WHERE ( type = 1 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.002282s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000371s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000517s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.070033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.070182s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000535s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000634s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001156s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001265s ]
+
+[ 2017-03-22T12:33:15+08:00 ] 127.0.0.1 /enroll_test/User/logout.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022882s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022931s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000187s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000221s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000538s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000589s ]
+
+[ 2017-03-22T12:33:16+08:00 ] 127.0.0.1 /enroll_test/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000033s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000892s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001103s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001245s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000237s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000504s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\6830cbac89ff06451c77cd8769d6d4ca.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.019276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019461s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000744s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000906s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001571s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001743s ]
+
+[ 2017-03-22T12:33:16+08:00 ] 127.0.0.1 /enroll_test/User/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000023s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000565s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000701s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000789s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000074s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000167s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\6830cbac89ff06451c77cd8769d6d4ca.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010851s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000353s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000418s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000825s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000915s ]
+
+[ 2017-03-22T12:33:17+08:00 ] 127.0.0.1 /enroll_test/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000018s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000438s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000421s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000470s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Controller\UserController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000046s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\5c9ee6d19cd41add49f97afe3aef0b25.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006033s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006086s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000227s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000429s ]
+
+[ 2017-03-22T12:33:17+08:00 ] 127.0.0.1 /enroll_test/User/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000050s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000510s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000955s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001037s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Controller\UserController.class.php 第 21 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000039s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\5c9ee6d19cd41add49f97afe3aef0b25.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.004960s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004996s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2017-03-22T12:33:20+08:00 ] 127.0.0.1 /enroll_test/User/register_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000556s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000043s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\3359adbadf95118621a5c500fb3ff893.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.026126s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.026189s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000276s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000318s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000355s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2017-03-22T12:33:20+08:00 ] 127.0.0.1 /enroll_test/User/register_index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000423s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000465s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000040s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000085s ]
+NOTIC: [8] Undefined index: login_uid D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\3359adbadf95118621a5c500fb3ff893.php 第 55 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005583s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005623s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000230s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000260s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000408s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000443s ]
+
+[ 2017-03-22T12:33:27+08:00 ] 127.0.0.1 /enroll_test/index.php/User/login_check
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000334s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `registration` [ RunTime:0.042543s ]
+SQL: SELECT `password` FROM `registration` WHERE ( username = 'aaa' ) LIMIT 1   [ RunTime:0.000709s ]
+
+[ 2017-03-22T12:33:27+08:00 ] 127.0.0.1 /enroll_test/index.php/Vote/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000021s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000554s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000695s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000779s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.003062s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.003696s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 1 AND del = 0 ) LIMIT 1   [ RunTime:0.000490s ]
+SQL: SELECT * FROM `project` WHERE ( type = 1 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000818s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000116s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000202s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.018591s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018691s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000341s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000404s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000984s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001098s ]
+
+[ 2017-03-22T12:33:29+08:00 ] 127.0.0.1 /enroll_test/Register/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000397s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000517s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000578s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.002573s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002409s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 2 AND del = 0 ) LIMIT 1   [ RunTime:0.000367s ]
+SQL: SELECT * FROM `project` WHERE ( type = 2 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000374s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000064s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000120s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.049852s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.049904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000193s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000226s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000394s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000431s ]
+
+[ 2017-03-22T12:33:31+08:00 ] 127.0.0.1 /enroll_test/Register/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000378s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.001801s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000201s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000335s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 45 行.
+NOTIC: [8] Undefined variable: listClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 62 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.050904s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000785s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000931s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001791s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002057s ]
+
+[ 2017-03-22T12:33:46+08:00 ] 127.0.0.1 /enroll_test/Register/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000294s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000377s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.010351s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002002s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 2 AND del = 0 ) LIMIT 1   [ RunTime:0.000475s ]
+SQL: SELECT * FROM `project` WHERE ( type = 2 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000403s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000053s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.008280s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.008320s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000340s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2017-03-22T12:33:48+08:00 ] 127.0.0.1 /enroll_test/Register/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000316s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000390s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000441s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.026774s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000138s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 45 行.
+NOTIC: [8] Undefined variable: listClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 62 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009639s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009695s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000243s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000291s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000631s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000710s ]
+
+[ 2017-03-22T12:33:58+08:00 ] 127.0.0.1 /enroll_test/Vote/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000037s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000932s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001234s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001372s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.002921s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.003283s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 1 AND del = 0 ) LIMIT 1   [ RunTime:0.000541s ]
+SQL: SELECT * FROM `project` WHERE ( type = 1 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000719s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000106s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014848s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000307s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000365s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000651s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000714s ]
+
+[ 2017-03-22T12:34:00+08:00 ] 127.0.0.1 /enroll_test/Vote/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000017s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000403s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000511s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000576s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.002793s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.003799s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 1 AND del = 0 ) LIMIT 1   [ RunTime:0.000361s ]
+SQL: SELECT * FROM `project` WHERE ( type = 1 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000393s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000061s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000108s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010073s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000239s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000274s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000405s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000442s ]
+
+[ 2017-03-22T12:34:08+08:00 ] 127.0.0.1 /enroll_test/Register/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000013s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000381s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.002487s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 2 AND del = 0 ) LIMIT 1   [ RunTime:0.000281s ]
+SQL: SELECT * FROM `project` WHERE ( type = 2 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000336s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000086s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000148s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.012002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012055s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000223s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000266s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000466s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000511s ]
+
+[ 2017-03-22T12:34:10+08:00 ] 127.0.0.1 /enroll_test/Register/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000016s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000385s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000491s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000554s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.007099s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000071s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000122s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 45 行.
+NOTIC: [8] Undefined variable: listClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\e565bc405bee902eed9c5aab06c2e15d.php 第 62 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.011318s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011363s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000194s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000486s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000541s ]
+
+[ 2017-03-22T12:50:22+08:00 ] 127.0.0.1 /enroll_test/Post/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000235s ]
+INFO: [ app_init ] --END-- [ RunTime:0.003937s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001265s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001350s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.006995s ]
+NOTIC: [2] Missing argument 1 for Home\Model\CommonModel::getLoginUserInfo(), called in D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php on line 26 and defined D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\CommonModel.class.php 第 29 行.
+NOTIC: [8] Undefined index: seeAble D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 45 行.
+NOTIC: [8] Undefined index: voteRule D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 46 行.
+NOTIC: [8] Undefined index: login_require D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.005900s ]
+SQL: INSERT INTO `project` (`type`,`is_active`,`dateline`,`start_time`,`end_time`,`title`,`login_require`,`username`,`uid`,`see_able`,`vote_rule`,`register_allow_times`) VALUES (2,1,1490158222,0,0,'1',1,null,1,null,null,0) [ RunTime:0.000636s ]
+ERR: 1048:Column 'username' cannot be null
+ [ SQL语句 ] : INSERT INTO `project` (`type`,`is_active`,`dateline`,`start_time`,`end_time`,`title`,`login_require`,`username`,`uid`,`see_able`,`vote_rule`,`register_allow_times`) VALUES (2,1,1490158222,0,0,'1',1,null,1,null,null,0)
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000087s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.022464s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.022700s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002673s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002809s ]
+
+[ 2017-03-22T12:50:34+08:00 ] 127.0.0.1 /enroll_test/Post/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000015s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000539s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000754s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000801s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002235s ]
+NOTIC: [2] Missing argument 1 for Home\Model\CommonModel::getLoginUserInfo(), called in D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php on line 26 and defined D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\CommonModel.class.php 第 29 行.
+NOTIC: [8] Undefined index: seeAble D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 45 行.
+NOTIC: [8] Undefined index: voteRule D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 46 行.
+NOTIC: [8] Undefined index: login_require D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.001958s ]
+SQL: INSERT INTO `project` (`type`,`is_active`,`dateline`,`start_time`,`end_time`,`title`,`login_require`,`username`,`uid`,`see_able`,`vote_rule`,`register_allow_times`) VALUES (2,1,1490158233,0,0,'1',1,null,1,null,null,0) [ RunTime:0.000213s ]
+ERR: 1048:Column 'username' cannot be null
+ [ SQL语句 ] : INSERT INTO `project` (`type`,`is_active`,`dateline`,`start_time`,`end_time`,`title`,`login_require`,`username`,`uid`,`see_able`,`vote_rule`,`register_allow_times`) VALUES (2,1,1490158233,0,0,'1',1,null,1,null,null,0)
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000051s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000096s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.005699s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.005762s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000545s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000577s ]
+
+[ 2017-03-22T12:51:35+08:00 ] 127.0.0.1 /enroll_test/Post/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000022s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000382s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000643s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000702s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.003682s ]
+NOTIC: [2] Missing argument 1 for Home\Model\CommonModel::getLoginUserInfo(), called in D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php on line 26 and defined D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\CommonModel.class.php 第 29 行.
+NOTIC: [8] Undefined index: seeAble D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 45 行.
+NOTIC: [8] Undefined index: voteRule D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 46 行.
+NOTIC: [8] Undefined index: login_require D:\XAMPP\htdocs\Zst\enroll_test\Application\Home\Model\ProjectModel.class.php 第 50 行.
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002049s ]
+SQL: INSERT INTO `project` (`type`,`is_active`,`dateline`,`start_time`,`end_time`,`title`,`login_require`,`username`,`uid`,`see_able`,`vote_rule`,`register_allow_times`) VALUES (2,1,1490158295,0,0,'1',1,null,1,null,null,0) [ RunTime:0.000241s ]
+ERR: 1048:Column 'username' cannot be null
+ [ SQL语句 ] : INSERT INTO `project` (`type`,`is_active`,`dateline`,`start_time`,`end_time`,`title`,`login_require`,`username`,`uid`,`see_able`,`vote_rule`,`register_allow_times`) VALUES (2,1,1490158295,0,0,'1',1,null,1,null,null,0)
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000106s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.006403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006457s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000404s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000438s ]
+
+[ 2017-03-22T13:18:44+08:00 ] 127.0.0.1 /enroll_test/Vote/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000012s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000367s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000811s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000864s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.003667s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002164s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 1 AND del = 0 ) LIMIT 1   [ RunTime:0.000341s ]
+SQL: SELECT * FROM `project` WHERE ( type = 1 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000485s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000055s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000095s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009777s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009817s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000467s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000500s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000655s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000689s ]
+
+[ 2017-03-22T13:18:45+08:00 ] 127.0.0.1 /enroll_test/Register/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000014s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000408s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000746s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000807s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.002347s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002241s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 2 AND del = 0 ) LIMIT 1   [ RunTime:0.000342s ]
+SQL: SELECT * FROM `project` WHERE ( type = 2 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000381s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000105s ]
+NOTIC: [8] Undefined variable: voteClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 33 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\8bb6b0286929b81b0448f2cdcc1e937c.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.010769s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010812s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000476s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000508s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000658s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000694s ]
+
+[ 2017-03-22T13:18:46+08:00 ] 127.0.0.1 /enroll_test/Vote/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000011s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000347s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000675s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000718s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.033923s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+SQL: SHOW COLUMNS FROM `project` [ RunTime:0.002609s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `project` WHERE ( type = 1 AND del = 0 ) LIMIT 1   [ RunTime:0.000307s ]
+SQL: SELECT * FROM `project` WHERE ( type = 1 AND del = 0 ) ORDER BY dateline DESC LIMIT 0,15   [ RunTime:0.000346s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000057s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000101s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 45 行.
+NOTIC: [8] Undefined variable: addClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 63 行.
+NOTIC: [8] Undefined variable: optionType D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\9eb0be1c8543928b722255f5f5e17aa1.php 第 138 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.009465s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.009510s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000502s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000535s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000644s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000679s ]
+
+[ 2017-03-22T13:18:47+08:00 ] 127.0.0.1 /enroll_test/Vote/add.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000010s ]
+INFO: [ app_init ] --END-- [ RunTime:0.000340s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000614s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000657s ]
+NOTIC: [8192] mysql_connect(): The mysql extension is deprecated and will be removed in the future: use mysqli or PDO instead D:\XAMPP\htdocs\Zst\enroll_test\ThinkPHP\Library\Think\Db\Driver\Mysql.class.php 第 52 行.
+SQL: SHOW COLUMNS FROM `common` [ RunTime:0.025059s ]
+ERR: 1146:Table 'enroll_test.common' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `common`
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000257s ]
+NOTIC: [8] Undefined variable: registerClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\46b4f8ce50cfba97b2c6d2480ff21293.php 第 36 行.
+NOTIC: [8] Undefined variable: researchClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\46b4f8ce50cfba97b2c6d2480ff21293.php 第 39 行.
+NOTIC: [8] Undefined index: login_username D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\46b4f8ce50cfba97b2c6d2480ff21293.php 第 45 行.
+NOTIC: [8] Undefined variable: listClass D:\XAMPP\htdocs\Zst\enroll_test\Application\Runtime\Cache\Home\46b4f8ce50cfba97b2c6d2480ff21293.php 第 62 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.060804s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.060917s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001196s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001278s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002097s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002211s ]
+

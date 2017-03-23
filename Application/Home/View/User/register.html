@@ -1,0 +1,22 @@
+<include file="Public/header_show" title="管理员登录" />
+	
+	<link rel="stylesheet" href="__PUBLIC__/css/register.css" type="text/css">
+	<div class="box">
+		用户名：<input class="username input" type="text" placeholder="用户名"> 至少四个字节
+		<div class="feedback"></div>
+		密码：<input class="password input" type="password" placeholder="密码"> <input onclick="show_pwd()" type="checkbox"> 至少六个字节
+		<div class="feedback"></div>
+		确认密码：<input class="password_repeat input" type="password" placeholder="确认密码"> <input onclick="show_repeat()" type="checkbox">
+		<div class="feedback"></div>
+		手机号：<input class="phone_number input" type="text" placeholder="手机号">
+		<div class="feedback"></div>
+		邮箱：<input class="email input" type="text" placeholder="邮箱">
+		<div class="feedback"></div>
+		<div class="button">
+			<button onclick="register()">注册</button>
+		</div>
+	</div>
+
+<include file="Public/footer_show" />
+	
+	<script type="text/javascript" src="__PUBLIC__/js/register.js"></script>
