@@ -91,12 +91,14 @@
             		'email':email
             	},
             	success: function(msg){
-            		if( msg == true ){
-            			location.href = url + "/Vote/index";
+            		if( msg == 'user' ){
+            			location.href = url + "/Vote/votepage";
             		}
-            		if( msg == 'u_repeat' ){
-            			$('.feedback').eq(0).html('用户名已存在！');
-            		}
+            		else {     if( msg == 'u_repeat' ){
+            			               $('.feedback').eq(0).html('用户名已存在！');
+            		                             }
+            		            else  {$('.feedback').eq(0).html('未知错误');}
+            		 }
             	}   
             })  
 

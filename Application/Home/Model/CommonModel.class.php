@@ -11,7 +11,7 @@ class CommonModel extends Model {
 	* 获取用户信息，参数 str 用户名
 	*/
 	public function getUserInfoByUsername($username){
-		return $this->table('admin')->field()->where("username = '%s'",$username)->find();
+		return $this->table('registration')->field()->where("username = '%s'",$username)->find(); //
 	}
 
 	/*
