@@ -25,7 +25,12 @@ class CommonModel extends Model {
     	        $result = D('registration')
                 -> where( 'username ='." '$username'" )
                 -> getField( 'power' );
-                if(hash("sha256", 'admin')===$result) {return ture;}
+                if(hash("sha256", 'admin')===$result) {
+                	return ture;
+               	}
+                else{
+                	return false;
+                }
     }
 	/**
 	 * 获取当前登录用户信息

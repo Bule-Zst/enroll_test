@@ -57,7 +57,10 @@
                     }
                     $_SESSION['login_uid'] = 1;
                     $_SESSION['login_username']=$username;
-                    if($username=='admin') {$this -> ajaxReturn('admin'); }
+                    $power = D('registration')
+                        -> where( 'username ='." '$username'" )
+                        -> getField( 'power' );
+                    if($power==hash('sha256', 'admin')) {$this -> ajaxReturn('admin'); }
                     else {$this -> ajaxReturn('user');}
                 }
                 else{
@@ -89,12 +92,24 @@
             if( $result ){
                 $this -> ajaxReturn( 'u_repeat' );
             }
-            $data = [
-                "username"     =>   $username,
-                "password"     =>   $password,
-                'phone_number' =>   $phone_number,
-                'email'        =>   $email
-            ];
+            if( D( 'Common' ) -> isAdmin() ){
+                $power = hash( "sha256", 'admin' );
+                $data = [
+                    "username"     =>   $username,
+                    "password"     =>   $password,
+                    'phone_number' =>   $phone_number,
+                    'email'        =>   $email,
+                    'power'        =>   $power
+                ];
+            }
+            else{
+                $data = [
+                    "username"     =>   $username,
+                    "password"     =>   $password,
+                    'phone_number' =>   $phone_number,
+                    'email'        =>   $email
+                ];
+            }
             D('registration')
                 -> add( $data );
             if(!isset($_SESSION)){

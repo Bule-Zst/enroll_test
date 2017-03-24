@@ -42,20 +42,12 @@
 			},
 			success: function(msg){
 				// msg = true;
-				//console.log(msg);
+				console.log(msg);
 			if( msg == 'admin'){
-					var judge = $("#cookie").is(':checked');
-					if( judge == true ){
-						set_cookie_func( 'login', 'true', 7 );
-					}
 	                 location.href = url + "/Vote/index";
 			}
 			else{
 				if( msg == 'user'){
-					var judge = $("#cookie").is(':checked');
-					if( judge == true ){
-						set_cookie_func( 'login', 'true', 7 );
-					}
 	                 location.href = url + "/Vote/votepage";
 				}
 				else{

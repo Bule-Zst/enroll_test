@@ -83,7 +83,7 @@
 	                    <?php if($v["is_active"] == 1): ?>已启动
 	                    	<?php else: ?>未启动<?php endif; ?>
 	                </td>
-	                <td>  <a href="<?php echo U('Show/index','proId='.$v[id]);?>" target="_blank">打开投票</a> || <a href="<?php echo U('Vote/result','voteId='.$v[id]);?>" target="_blank" >查看结果</a>
+	                <td>  <a href="<?php echo U('Show/index','proId='.$v[id]);?>" target="_blank">打开投票</a>
 	                </td>
 	            </tr><?php endforeach; endif; ?>
 	    </table>
