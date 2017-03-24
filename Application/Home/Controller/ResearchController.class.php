@@ -13,6 +13,11 @@
             }
 
     	public function index(){
+                    $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $this->assign('researchClass','active');
                         $this->assign('listClass', 'active');
 
@@ -25,6 +30,7 @@
                         $this->assign('researchList', $list);
                         $this->assign('page', $show);
     		$this->display();
+        }
     	}
 
     	public function detail(){
@@ -32,15 +38,26 @@
     	}
 
     	public function add(){
+                    $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $this->assign('researchClass', 'active');
                         $this->assign('addClass', 'active');
                         $this->assign('researchRule', C('VOTE_RULE'));
                         $this->assign('optionType', C('OPTION_TYPE'));
 
                         $this->display();
+                    }
     	}
 
     	public function edit(){
+                    $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $this->assign('researchClass', 'active');
                         $this->assign('editClass', 'active');
                         $this->assign('researchRule', C('VOTE_RULE'));
@@ -71,9 +88,15 @@
 
                         // dump($data);exit;
                         $this->display();
+                    }
     	}
 
     	public function delete(){
+                        $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $vid = I('post.researchId');
                         $retId = M('Project')->where('id = '.$vid)->setField('del', 1);
                         if($retId == 1){
@@ -81,6 +104,7 @@
                         }else{
                             $this->ajaxReturn(array('status'=>0,'data'=>'删除失败'));
                         }
+                    }
 
     	}
 
@@ -89,12 +113,14 @@
             *    投票结果
             */
             public function result(){
+                        $Common = D('Common');
+                        $admin=$Common->isAdmin();
                         $researchId = I('get.researchId')?I('get.researchId'):0;
                         $researchInfo = M('Project')->where('id = '.$researchId)->find();
-                        if(!$researchInfo['see_able']){
+                        if(!$researchInfo['see_able']&&!$admin){
                             $this->error('此投票结果不允许查看', '/');
                         }
-                        if(!$researchInfo['del']){
+                        if(!$researchInfo['del']&&!$admin){
                             $this->error('此投票已删除', '/');
                         }
                                    

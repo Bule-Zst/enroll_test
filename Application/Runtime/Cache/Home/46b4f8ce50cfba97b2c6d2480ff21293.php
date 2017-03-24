@@ -48,7 +48,7 @@
                 </ul>
               </li>
             <?php else: ?>
-              <li><a href="">登录</a></li><?php endif; ?>
+              <li><a href="<?php echo U('User/login');?>">登录</a></li><?php endif; ?>
           </ul>
       </nav>
     </div>
@@ -136,7 +136,7 @@
 			    <th width="10%">编号排序</th>
 			    <th>选项</th>
 			</tr>
-			<?php $__FOR_START_20043__=0;$__FOR_END_20043__=1;for($i=$__FOR_START_20043__;$i < $__FOR_END_20043__;$i+=1){ ?><tr>
+			<?php $__FOR_START_28258__=0;$__FOR_END_28258__=1;for($i=$__FOR_START_28258__;$i < $__FOR_END_28258__;$i+=1){ ?><tr>
 			        <td>
 			        	<div class="input-group">
 			        	    <span class="input-group-btn">

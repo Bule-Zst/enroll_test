@@ -18,7 +18,7 @@
     		// $_SESSION['login_uid'] = 1;
     		// $_SESSION['login_username'] = 'test';
              
-            if( $_SESSION['login_uid'] == 1 ){
+            if( $_SESSION['login_uid'] ){
 
                 if($_SESSION['login_username']==='admin'){
 
@@ -57,7 +57,7 @@
                     }
                     $_SESSION['login_uid'] = 1;
                     $_SESSION['login_username']=$username;
-                    if($username=='admin') {$this -> ajaxReturn('admin');}
+                    if($username=='admin') {$this -> ajaxReturn('admin'); }
                     else {$this -> ajaxReturn('user');}
                 }
                 else{

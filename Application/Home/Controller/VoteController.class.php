@@ -12,6 +12,11 @@
             }
 
     	public function index(){
+                        $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $this->assign('voteClass','active');
                         $this->assign('listClass', 'active');
 
@@ -23,7 +28,8 @@
 
                         $this->assign('voteList', $list);
                         $this->assign('page', $show);
-    		$this->display();
+    		            $this->display();
+                        }
     	}
         public function votepage(){
                         $this->assign('voteClass','active');
@@ -40,15 +46,26 @@
             $this->display();
         }
     	public function add(){
+                        $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $this->assign('voteClass', 'active');
                         $this->assign('addClass', 'active');
                         $this->assign('voteRule', C('VOTE_RULE'));
                         $this->assign('optionType', C('VOTE_OPTION_TYPE'));
 
                         $this->display();
+                        }
     	}
 
     	public function edit(){
+                        $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $this->assign('voteClass', 'active');
                         $this->assign('editClass', 'active');
                         $this->assign('voteRule', C('VOTE_RULE'));
@@ -79,9 +96,15 @@
 
                         // dump($data);exit;
                         $this->display();
+                    }
     	}
 
     	public function delete(){
+                        $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $vid = I('post.pId');
                         $retId = M('Project')->where('id = '.$vid)->setField('del', 1);
                         if($retId == 1){
@@ -89,6 +112,7 @@
                         }else{
                             $this->ajaxReturn(array('status'=>0,'data'=>'删除失败'));
                         }
+                    }
 
     	}
 
@@ -98,15 +122,17 @@
             */
             
             public function result(){
+                        $Common = D('Common');
+                        $admin=$Common->isAdmin();
                         $voteId = I('get.voteId')?I('get.voteId'):0;
                         $voteInfo = M('Project')->where('id = '.$voteId)->find();
 
-                        if(!$voteInfo['see_able']){
-                            $this->error('此投票结果不允许查看', '/');
+                        if(!$voteInfo['see_able']&&!$admin){
+                            $this->error('此投票结果不允许查看', U('Vote/votepage'));
                         }
 
-                        if($voteInfo['del']){
-                            $this->error('此投票已删除', '/');
+                        if($voteInfo['del']&&!$admin){
+                            $this->error('此投票已删除', U('Vote/votepage'));
                         }
                                    
                         $voteOptions = M('ProjectFields')->where('pid = '.$voteId)->find();

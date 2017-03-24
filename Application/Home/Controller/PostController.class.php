@@ -10,6 +10,10 @@
     	    switch (I('post.formActionType')){
     	    	case 'newVote':
                                     // dump(I('post.'));exit;
+                                $Common = D('Common');
+                                if($Common->isAdmin()){
+                             
+                        
                                     $result =D('Project')->addProject(I('post.'), 1);
                                     if($result['code'] == 0){
                                         $this->success('添加成功', U('Vote/index'));
@@ -17,9 +21,12 @@
                                         // dump(json_decode($result['msg']));exit;
                                         $this->error($result['msg']);
                                     }
+                                }
     	    		break;
                         case 'updateVote':
                                     // dump(I('post.'));exit;
+                                 $Common = D('Common');
+                                if($Common->isAdmin()){
                                     $result =D('Project')->updateProject(I('post.'), 1);
                                     if($result['code'] == 0){
                                         $this->success('修改成功', U('Vote/index'));
@@ -27,6 +34,7 @@
                                         // dump($result['msg']);
                                         $this->error($result['msg']);
                                     }
+                                }
                                     break;
                         case 'submitPro':
                                     // dump(I('post.'));exit;
@@ -41,6 +49,8 @@
                                     break;    
     	    	case 'newRegister':
                                     // dump(I('post.'));exit;
+                                $Common = D('Common');
+                                if($Common->isAdmin()){
                                     $result = D('Project')->addProject(I('post.'), 2);
                                     if($result['code'] == 0){
                                         $this->success('添加成功', U('Register/index'));
@@ -48,9 +58,12 @@
                                         // dump($result['msg']);exit;
                                         $this->error($result['msg']);
                                     }
+                                }
     	    		break;
                         case 'updateRegister':
                                     // dump(I('post.'));exit;
+                                    $Common = D('Common');
+                                   if($Common->isAdmin()){
                                     $result =D('Project')->updateProject(I('post.'), 2);
                                     if($result['code'] == 0){
                                         $this->success('修改成功', U('Register/index'));
@@ -58,6 +71,7 @@
                                         // dump($result['msg']);
                                         $this->error($result['msg']);
                                     }
+                                }
                                     break;
     
     	    	case 'newResearch':

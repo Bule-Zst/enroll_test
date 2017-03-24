@@ -20,7 +20,13 @@ class CommonModel extends Model {
 	public function isLogin(){
 		return session('login_uid');
 	}
-
+    public function isAdmin(){
+    	        $username=$_SESSION['login_username'];
+    	        $result = D('registration')
+                -> where( 'username ='." '$username'" )
+                -> getField( 'power' );
+                if(hash("sha256", 'admin')===$result) {return ture;}
+    }
 	/**
 	 * 获取当前登录用户信息
 	 * @param brandId 品牌ID

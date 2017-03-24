@@ -12,6 +12,11 @@
             }
 
             public function index(){
+                         $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                             $this->assign('registerClass','active');
                             $this->assign('listClass', 'active');
     
@@ -24,6 +29,7 @@
                             $this->assign('registerList', $list);
                             $this->assign('page', $show);
                             $this->display();
+                        }
             }
             public function registpage(){
                             $this->assign('registerClass','active');
@@ -40,13 +46,24 @@
                             $this->display();
             }
             public function add(){
+                    $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                             $this->assign('registerClass', 'active');
                             $this->assign('addClass', 'active');
                             $this->assign('optionType', C('REGISTER_OPTION_TYPE'));
                             $this->display();
+                        }
             }
     
             public function edit(){
+                    $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                             $this->assign('registerClass', 'active');
                             $this->assign('editClass', 'active');
                             $this->assign('optionType', C('REGISTER_OPTION_TYPE'));
@@ -76,9 +93,15 @@
     
                             // dump($data);exit;
                             $this->display();
+                        }
             }
     
             public function delete(){
+                         $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                             $vid = I('post.pId');
                             $retId = M('Project')->where('id = '.$vid)->setField('del', 1);
                             if($retId == 1){
@@ -86,6 +109,7 @@
                             }else{
                                 $this->ajaxReturn(array('status'=>0,'data'=>'删除失败'));
                             }
+                        }
     
             }
 
@@ -94,6 +118,11 @@
             *    报名结果function
             */
             public function result(){
+                        $Common = D('Common');
+                    if(!$Common->isAdmin()){
+                            redirect(U('User/index'));
+                        }
+                    else{
                         $registerId = I('get.proId')?I('get.proId'):0;
                         $registerInfo = D('Project')->getProjectInfo($registerId);
                         
@@ -129,6 +158,7 @@
                         $this->assign('totalRegister', $len);
                         $this->assign('page', $show);
                         $this->display();
+                    }
 
             }
     }
