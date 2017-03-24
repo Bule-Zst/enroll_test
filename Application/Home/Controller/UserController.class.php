@@ -34,7 +34,7 @@
         }
 
 
-        //Readme========================
+        //Readme
         //input:
         //  username
         //  password
@@ -42,7 +42,7 @@
         //  true: login success
         //  u: username doesn't exist
         //  p: password is wrong
-        //===============================
+        //
         public function login_check(){
             // $this -> ajaxReturn( 10 );
             $username = $_POST['username'];
@@ -91,6 +91,8 @@
             $password     =     hash("sha256", $password.'HowToUseBcryptInTP?');
             $phone_number =     $_POST['phone_number'];
             $email        =     $_POST['email'];
+            
+
             $result = D('registration')
                 -> where( "username = '%s'",$username )
                 -> find();
