@@ -45,7 +45,7 @@
         //
         public function login_check(){
             // $this -> ajaxReturn( 10 );
-            $username = $_POST['username'];
+            $username = I('post.username');
             $password = $_POST['password'];
             $result = D('registration')
                 -> where( "username = '%s'",$username )
@@ -62,14 +62,14 @@
                     $power = D('registration')
                         -> where(  "username = '%s'",$username  )
                         -> getField( 'power' );
-                    if($power===hash('sha256', 'admin')) {$this -> ajaxReturn('admin'); }
-                    else {$this -> ajaxReturn('user');}
+                    if($power===hash('sha256', 'admin')) { $this->redirect('Vote/index');}
+                    else {$this -> redirect('Vote/votepage');}
                 }
                 else{
                     $this -> ajaxReturn('p');
                 }
             }
-            $this -> ajaxReturn('u');
+         else   $this -> ajaxReturn('u');
         }
 
         public function register_index(){

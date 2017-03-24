@@ -2,16 +2,18 @@
 
 	<link rel="stylesheet" href="__PUBLIC__/css/login.css" type="text/css">
 	<div class="login">
-		用户名：<input class="username" type="text" placeholder="用户名">
+	<form method="post" action="{:U('User/login_check')}">
+		用户名：<input class="username" type="text" placeholder="用户名" name='username'>
 		<div class="feedback"></div>
-		密码：<input class="password" type="password" placeholder="密码"> <input onclick="show_pwd_func()" class="checkbox" type="checkbox">
+		密码：<input class="password" type="password" placeholder="密码" name='password'> <input onclick="show_pwd_func()" class="checkbox" type="checkbox">
 		<div class="feedback"></div>
 		<div class="button">
-			<a style="text-decoration: none;" target="_blank" href="{:U('User/register_index')}"><button class="registration">注册</button></a>
-			<button class="login_button" onclick="login()">登陆</button>
+			<button type="submit" class="btn btn-primary" id="align-center">登录</button>
+		    <button type="button" class="btn btn-primary" id="align-center" onClick="location.href='register_index'" >注册</button>
 		</div>
+	</form>
 	</div>
 
 <include file="Public/footer_show" />
-	<!-- 放在include后面，因为要使用include里包含的jquery -->
-    <script type="text/javascript" src="__PUBLIC__/js/login.js"></script>
+ 
+ 
