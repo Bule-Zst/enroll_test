@@ -36,21 +36,20 @@
         //  p: password is wrong
         //===============================
         public function login_check(){
-            // $this -> ajaxReturn( 10 );
             $username = $_POST['username'];
             $password = $_POST['password'];
-            $result = D('registration')
+            $result = M('registration')
                 -> where( 'username ='." '$username'" )
                 -> getField( 'password' );
-            // $a = "bbb" == $result;
-            // $this -> ajaxReturn( $a );
             if( $result ){
                 if( $result == $password ){
                     if(!isset($_SESSION)){
                         session_start();
                     }
                     $_SESSION['login_uid'] = 1;
-                    $this -> ajaxReturn(true);
+                    $_SESSION['username'] = $username;
+                    $authority = D( 'Common' ) -> get_authority( $username );
+                    $this -> ajaxReturn( true );
                 }
                 else{
                     $this -> ajaxReturn('p');
@@ -92,6 +91,7 @@
                 session_start();
             }
             $_SESSION['login_uid'] = 1;
+            $_SESSION['username'] = $username;
             $this -> ajaxReturn( true );
         }
     }

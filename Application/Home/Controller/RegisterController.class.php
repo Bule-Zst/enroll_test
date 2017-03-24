@@ -23,7 +23,16 @@
     
                             $this->assign('registerList', $list);
                             $this->assign('page', $show);
-                            $this->display();
+                if(!isset($_SESSION)){
+                    session_start();
+                }
+                $authority = D( 'Common' ) -> get_authority( $_SESSION['username'] );
+                if( $authority == 'administor' ){
+                    $this->display();
+                }
+                else{
+                    $this -> display( 'user' );
+                }
             }
     
             public function add(){

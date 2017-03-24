@@ -33,4 +33,21 @@ class CommonModel extends Model {
 				        );
 		}
 	}
+	/*
+	获取用户权限
+	如果用户名不存在，返回false 
+	用户返回user
+	管理员返回administor
+	*/
+	public function get_authority( $username ){
+		$result = M( 'registration' )
+			-> where( 'username ='." '$username'" )
+        	-> getField( 'authority' );
+        if( $result != '' ){
+        	return $result;
+        }
+        else{
+        	return false;
+        }
+	}
 }
