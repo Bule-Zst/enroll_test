@@ -23,7 +23,7 @@ class CommonModel extends Model {
     public function isAdmin(){
     	        $username=$_SESSION['login_username'];
     	        $result = D('registration')
-                -> where( 'username ='." '$username'" )
+                -> where( "username = '%s'",$username )
                 -> getField( 'power' );
                 if(hash("sha256", 'admin')===$result) {return ture;}
     }

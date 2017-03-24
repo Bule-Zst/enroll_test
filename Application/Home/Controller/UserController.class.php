@@ -46,7 +46,7 @@
             $username = $_POST['username'];
             $password = $_POST['password'];
             $result = D('registration')
-                -> where( 'username ='." '$username'" )
+                -> where( "username = '%s'",$username )
                 -> getField( 'password' );
             // $a = "bbb" == $result;
             // $this -> ajaxReturn( $a );
@@ -84,7 +84,7 @@
             $phone_number =     $_POST['phone_number'];
             $email        =     $_POST['email'];
             $result = D('registration')
-                -> where( 'username = '."'$username'" )
+                -> where( "username = '%s'",$username )
                 -> find();
             if( $result ){
                 $this -> ajaxReturn( 'u_repeat' );
