@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
   <head>
-    <title>报名列表--报名系统</title>
+    <title>发起投票--报名系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/enroll_test/Public/bootstrap/css/bootstrap.min.css">
@@ -60,58 +60,122 @@
   <div class="rows">
     <div class="col-md-12 content">
     	<ul class="nav nav-tabs" role="tablist">
-    		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Register/index');?>">报名列表</a></li>
-		<li role="presentation" class="<?php echo ($addClass); ?>"><a href="<?php echo U('Register/add');?>">发起报名</a></li>
+    		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Vote/index');?>">投票列表</a></li>
+		<li role="presentation" class="<?php echo ($addClass); ?>"><a href="<?php echo U('Vote/add');?>">发起投票</a></li>
 	</ul>
-	<div class="table-responsive">
-	    <table class="table table-hover">
-	        <tr class="success">
-	            <th>标题</th>
-	            <th>创建人</th>
-	            <th>创建时间</th>
-	            <th>开始时间</th>
-	            <th>结束时间</th>
-	            <th>状态</th>
-	            <th>操作</th>
-	        </tr>
-	        <?php if(is_array($registerList)): foreach($registerList as $key=>$v): ?><tr>
-	        	    <td><?php echo ($v["title"]); ?></td>
-	                <td><?php echo ($v["username"]); ?></td>
-	                <td><?php echo (date('Y-m-d H:i:s',$v["dateline"])); ?></td>
-	                <td><?php echo (date('Y-m-d H:i:s',$v["start_time"])); ?></td>
-	                <td><?php echo (date('Y-m-d H:i:s',$v["end_time"])); ?></td>
-	                <td>
-	                    <?php if($v["is_active"] == 1): ?>已启动
-	                    	<?php else: ?>未启动<?php endif; ?>
-	                </td>
-	                <td><a href="<?php echo U('Register/edit','pid='.$v[id]);?>" target="_blank">编辑</a> || <a href="<?php echo U('Register/delete');?>" idAttr="<?php echo ($v["id"]); ?>" class="deleteProLink">删除</a> || <a href="<?php echo U('Show/index','proId='.$v[id]);?>" target="_blank">预览</a> || <a href="<?php echo U('Register/result','proId='.$v[id]);?>" target="_blank" >查看结果</a>
-	                </td>
-	            </tr><?php endforeach; endif; ?>
-	    </table>
-	</div>
-	<div align="center"><?php echo ($page); ?></div>
-    </div>
-  </div>
-</div>
 
-<!--删除出错提示窗-->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 class="modal-title text-center" id="myModalLabel">提示框</h3>
-        </div>
-        <div class="modal-body">
-          <h4><strong>Error!</strong></h4>
-          <h5 class="alert alert-danger" role="alert">数据删除失败！</h5>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div>
+	<div class="addvote">
+	    <div class="alert alert-info" role="alert">请填写控制信息</div>
+	    <form class="form-horizontal" id="voteForm" role="form" method="post" action="<?php echo U('Post/index');?>">
+	    	<div class="form-group">
+	    		<label for="projectTitle" class="col-sm-2 control-label">投票项目标题</label>
+	    		<div class="col-sm-5">
+	    			<!-- <div class="has-error"> -->
+	    			<input type="text" class="form-control require" name="projectTitle" id="projectTitle" placeholder="项目标题">
+	    			<!-- </div> -->
+	    		</div>
+	    	</div>
+	    	<div class="form-group">
+	    		<label for="startDate" class="col-sm-2 control-label">投票时间区间</label>
+	    		    <div class="col-sm-5" id="RangeDate">
+		    	    	<div class="input-daterange input-group">
+    		    	        	    <input type="text" class="form-control require" id="startDate" name="startDate" />
+    		    	        	    <span class="input-group-addon">至</span>
+    		    	        	    <input type="text" class="form-control require" id="endDate" name="endDate" />
+    		    	    	</div>
+    		    	    </div>
+    		</div>
+    		<div class="form-group">
+    			<label for="" class="col-sm-2 control-label">是否启动</label>
+    			<div class="col-sm-5">
+    			    <label class="radio-inline">
+    			    	<input type="radio" name="isStart" value="1" checked="checked">启动
+    			    </label>
+    			    <label class="radio-inline">
+    			    	<input type="radio" name="isStart" value="0">不启动
+    			    </label>
+    			</div>
+    		</div>
+    		<div class="form-group">
+    			<label for="" class="col-sm-2 control-label">是否需要登录</label>
+    			<div class="col-sm-5">
+    			    <label class="radio-inline">
+    			    	<input type="radio" name="loginRequire" value="1" checked="checked">需要
+    			    </label>
+    			    <label class="radio-inline">
+    			    	<input type="radio" name="loginRequire" value="0">不需要
+    			    </label>
+    			</div>
+    		</div>
+    		<div class="form-group">
+    			<label for="" class="col-sm-2 control-label">是否允许查看结果</label>
+    			<div class="col-sm-5">
+    			    <label class="radio-inline">
+    			    	<input type="radio" name="seeAble" value="1" checked="checked">允许
+    			    </label>
+    			    <label class="radio-inline">
+    			    	<input type="radio" name="seeAble" value="0">不允许
+    			    </label>
+    			</div>
+    		</div>
+		<div class="form-group">
+			<label for="" class="col-sm-2 control-label">投票规则</label>
+			<div class="col-sm-5">
+				<select name="voteRule" class="form-control">
+					<?php if(is_array($voteRule)): foreach($voteRule as $k=>$val): ?><option value="<?php echo ($k); ?>"><?php echo ($val); ?></option><?php endforeach; endif; ?>
+				</select>
+			</div>
+		</div>
+		<div class="alert alert-info" role="alert">
+			请添加所需投票项
+			<button type="button" class="btn btn-default" id="addItem"><span class="glyphicon glyphicon-plus"></span>  添加新条目</button>
+		</div>
+		<table class="table table-hover" id="optionTable">
+			<tr>
+			    <th width="20%">类型</th>
+			    <th width="40%">标题</th>
+			    <th width="10%">编号排序</th>
+			    <th>选项</th>
+			</tr>
+			<?php $__FOR_START_29965__=0;$__FOR_END_29965__=1;for($i=$__FOR_START_29965__;$i < $__FOR_END_29965__;$i+=1){ ?><tr>
+			        <td>
+			        	<div class="input-group">
+			        	    <span class="input-group-btn">
+			        	    	<button class="btn btn-danger deleteItem" type="button" data-toggle="tooltip" data-placement="right" title="删除此题">删除
+			        	    	</button>
+			        	    </span>
+			                <select name="childType<?php echo ($i); ?>" class="form-control">
+			                    <?php if(is_array($optionType)): foreach($optionType as $k=>$val): ?><option value="<?php echo ($k); ?>"><?php echo ($val); ?></option><?php endforeach; endif; ?>
+			                </select>
+			        	</div>
+			        </td>
+			        <td>
+			        	<div>
+			        	    <input type="text" class="form-control require" name="childTitle<?php echo ($i); ?>" placeholder="标题" />
+			        	</div>
+			        <td>
+			        	<div>
+			        	    <input type="text" class="form-control require" name="childRange<?php echo ($i); ?>" placeholder="排序" value="1"/>
+			        	</div>
+			        </td>
+			        <td>
+			        	    <div class="input-group">
+			        	        <input type="text" class="form-control require" name="childOption<?php echo ($i); ?>_1" placeholder="选项1"/>
+			        	        <span class="input-group-btn">
+			        	            <button class="btn btn-info addOption" type="button" data-toggle="tooltip" data-placement="right" title="新建一个子选项">添加
+			        	            </button>
+			        	        </span>
+			        	    </div>
+			        </td>
+			    </tr><?php } ?>
+		</table>
+		<input type="hidden" id="optionNum" name="optionNum" value="1" />
+		<input type="hidden" name="formActionType" value="newVote" />
+		<div align="center">
+		    <button type="submit" class="btn btn-primary btn-lg">生成表单</button>
+		</div>
+	    </form>
+	</div>
 
   <div align="center">  
     <footer class="about-footer" role="contentinfo">

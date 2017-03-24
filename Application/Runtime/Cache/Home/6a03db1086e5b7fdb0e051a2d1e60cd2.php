@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
   <head>
-    <title>报名列表--报名系统</title>
+    <title><?php echo ($registerInfo["title"]); ?>-报名结果--报名系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/enroll_test/Public/bootstrap/css/bootstrap.min.css">
@@ -56,62 +56,112 @@
   </header>
   <!-- 导航栏 End-->
 
+
+
 <div class="container">
   <div class="rows">
     <div class="col-md-12 content">
     	<ul class="nav nav-tabs" role="tablist">
     		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Register/index');?>">报名列表</a></li>
 		<li role="presentation" class="<?php echo ($addClass); ?>"><a href="<?php echo U('Register/add');?>">发起报名</a></li>
+		<li role="presentation" class="<?php echo ($resultClass); ?>"><a href="javascript:;">报名项目结果</a></li>
 	</ul>
-	<div class="table-responsive">
-	    <table class="table table-hover">
-	        <tr class="success">
-	            <th>标题</th>
-	            <th>创建人</th>
-	            <th>创建时间</th>
-	            <th>开始时间</th>
-	            <th>结束时间</th>
-	            <th>状态</th>
-	            <th>操作</th>
+    	    <div class="alert alert-info" role="alert" align="center"><?php echo ($registerInfo["title"]); ?>(已有 <i><?php echo ($totalRegister); ?></i> 位人员报名)    <button type="button" onclick="export_excel('tableExcel')">导出Excel</button></div>
+	    <div class="table-responsive">
+	    <table id="tableExcel" class="table table-hover">
+	        <tr>
+	            <th>报名ID</th>
+	            <?php if(is_array($items)): foreach($items as $i=>$v): ?><th><?php echo ($v["title"]); ?></th><?php endforeach; endif; ?>
 	        </tr>
-	        <?php if(is_array($registerList)): foreach($registerList as $key=>$v): ?><tr>
-	        	    <td><?php echo ($v["title"]); ?></td>
-	                <td><?php echo ($v["username"]); ?></td>
-	                <td><?php echo (date('Y-m-d H:i:s',$v["dateline"])); ?></td>
-	                <td><?php echo (date('Y-m-d H:i:s',$v["start_time"])); ?></td>
-	                <td><?php echo (date('Y-m-d H:i:s',$v["end_time"])); ?></td>
-	                <td>
-	                    <?php if($v["is_active"] == 1): ?>已启动
-	                    	<?php else: ?>未启动<?php endif; ?>
-	                </td>
-	                <td><a href="<?php echo U('Register/edit','pid='.$v[id]);?>" target="_blank">编辑</a> || <a href="<?php echo U('Register/delete');?>" idAttr="<?php echo ($v["id"]); ?>" class="deleteProLink">删除</a> || <a href="<?php echo U('Show/index','proId='.$v[id]);?>" target="_blank">预览</a> || <a href="<?php echo U('Register/result','proId='.$v[id]);?>" target="_blank" >查看结果</a>
-	                </td>
+	        <?php if(is_array($eachAction)): foreach($eachAction as $key=>$v): ?><tr>
+	        	    <td><?php echo ($v["username"]); ?></td>
+	        	    <?php if(is_array($v['action'])): foreach($v['action'] as $key=>$a): ?><td><?php echo ($a); ?></td><?php endforeach; endif; ?>
 	            </tr><?php endforeach; endif; ?>
 	    </table>
 	</div>
 	<div align="center"><?php echo ($page); ?></div>
+	</div>
     </div>
-  </div>
 </div>
 
-<!--删除出错提示窗-->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 class="modal-title text-center" id="myModalLabel">提示框</h3>
-        </div>
-        <div class="modal-body">
-          <h4><strong>Error!</strong></h4>
-          <h5 class="alert alert-danger" role="alert">数据删除失败！</h5>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div>
+    <script language="JavaScript" type="text/javascript">  
+    var idTmr;  
+    function  getExplorer() {  
+        var explorer = window.navigator.userAgent ;  
+        //ie  
+        if (explorer.indexOf("MSIE") >= 0) {  
+            return 'ie';  
+        }  
+        //firefox  
+        else if (explorer.indexOf("Firefox") >= 0) {  
+            return 'Firefox';  
+        }  
+        //Chrome  
+        else if(explorer.indexOf("Chrome") >= 0){  
+            return 'Chrome';  
+        }  
+        //Opera  
+        else if(explorer.indexOf("Opera") >= 0){  
+            return 'Opera';  
+        }  
+        //Safari  
+        else if(explorer.indexOf("Safari") >= 0){  
+            return 'Safari';  
+        }  
+    }  
+    function export_excel(tableid) {  
+        if(getExplorer()=='ie')  
+        {  
+            var curTbl = document.getElementById(tableid);  
+            var oXL = new ActiveXObject("Excel.Application");  
+            var oWB = oXL.Workbooks.Add();  
+            var xlsheet = oWB.Worksheets(1);  
+            var sel = document.body.createTextRange();  
+            sel.moveToElementText(curTbl);  
+            sel.select();  
+            sel.execCommand("Copy");  
+            xlsheet.Paste();  
+            oXL.Visible = true;  
+  
+            try {  
+                var fname = oXL.Application.GetSaveAsFilename("Excel.xls", "Excel Spreadsheets (*.xls), *.xls");  
+            } catch (e) {  
+                print("Nested catch caught " + e);  
+            } finally {  
+                oWB.SaveAs(fname);  
+                oWB.Close(savechanges = false);  
+                oXL.Quit();  
+                oXL = null;  
+                idTmr = window.setInterval("Cleanup();", 1);  
+            }  
+  
+        }  
+        else  
+        {  
+            tableToExcel(tableid)  
+        }  
+    }  
+    function Cleanup() {  
+        window.clearInterval(idTmr);  
+        CollectGarbage();  
+    }  
+    var tableToExcel = (function() {  
+        var uri = 'data:application/vnd.ms-excel;base64,',  
+                template = '<html><head><meta charset="UTF-8"></head><body><table>{table}</table></body></html>',  
+                base64 = function(s) { return window.btoa(unescape(encodeURIComponent(s))) },  
+                format = function(s, c) {  
+                    // return s.replace(/{(w+)}/g,  
+                    //             function(m, p) { return c[p]; }) }  
+                    return s.replace(/{table}/g,c['table'])}  
+        return function(table, name) {  
+            if (!table.nodeType) table = document.getElementById(table)  
+
+            var ctx = {worksheet: name || 'Worksheet', table: table.innerHTML}  
+            window.location.href = uri + base64(format(template, ctx))  
+        }  
+    })()  
+  
+</script>
 
   <div align="center">  
     <footer class="about-footer" role="contentinfo">
