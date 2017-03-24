@@ -26,15 +26,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="<?php echo U('Vote/index');?>" class="navbar-brand">报名系统</a>
+        <a href="<?php echo U('Vote/votepage');?>" class="navbar-brand">报名系统</a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav first_ul">
             <li class="<?php echo ($voteClass); ?>">
-              <a href="<?php echo U('Vote/index');?>">投票</a>
+              <a href="<?php echo U('Vote/votepage');?>">投票</a>
             </li>
             <li class="<?php echo ($registerClass); ?>">
-              <a href="<?php echo U('Register/index');?>">报名</a>
+              <a href="<?php echo U('Register/registpage');?>">报名</a>
             </li>
             <!-- <li class="<?php echo ($researchClass); ?>">
               <a href="<?php echo U('Research/index');?>">调查</a>
@@ -59,8 +59,8 @@
   <div class="rows">
     <div class="col-md-12 content">
     	<ul class="nav nav-tabs" role="tablist">
-    		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Vote/index');?>">投票列表</a></li>
-		<li role="presentation" class="<?php echo ($addClass); ?>"><a href="<?php echo U('Vote/add');?>">发起投票</a></li>
+    		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Show/votepage');?>">投票列表</a></li>
+		
 	</ul>
 	<div class="table-responsive">
 	    <table class="table table-hover">
@@ -83,7 +83,7 @@
 	                    <?php if($v["is_active"] == 1): ?>已启动
 	                    	<?php else: ?>未启动<?php endif; ?>
 	                </td>
-	                <td><a href="<?php echo U('Vote/edit','vid='.$v[id]);?>" target="_blank">编辑</a> || <a href="<?php echo U('Vote/delete');?>" idAttr="<?php echo ($v["id"]); ?>" class="deleteProLink">删除</a> || <a href="<?php echo U('Show/index','proId='.$v[id]);?>" target="_blank">预览</a> || <a href="<?php echo U('Vote/result','voteId='.$v[id]);?>" target="_blank" >查看结果</a>
+	                <td>  <a href="<?php echo U('Show/index','proId='.$v[id]);?>" target="_blank">打开投票</a> || <a href="<?php echo U('Vote/result','voteId='.$v[id]);?>" target="_blank" >查看结果</a>
 	                </td>
 	            </tr><?php endforeach; endif; ?>
 	    </table>
@@ -93,24 +93,6 @@
   </div>
 </div>
 
-<!--删除出错提示窗-->
-  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h3 class="modal-title text-center" id="myModalLabel">提示框</h3>
-        </div>
-        <div class="modal-body">
-          <h4><strong>Error!</strong></h4>
-          <h5 class="alert alert-danger" role="alert">数据删除失败！</h5>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div>
 
   <div align="center">  
     <footer class="about-footer" role="contentinfo">

@@ -23,18 +23,22 @@
     
                             $this->assign('registerList', $list);
                             $this->assign('page', $show);
-                if(!isset($_SESSION)){
-                    session_start();
-                }
-                $authority = D( 'Common' ) -> get_authority( $_SESSION['username'] );
-                if( $authority == 'administor' ){
-                    $this->display();
-                }
-                else{
-                    $this -> display( 'user' );
-                }
+                            $this->display();
             }
+            public function registpage(){
+                            $this->assign('registerClass','active');
+                            $this->assign('listClass', 'active');
     
+                            $count = M('Project')->where('type = 2 AND del = 0')->count();
+                            $Page = new \Think\Page($count, 15);
+                            $show = $Page->show();
+    
+                            $list = M('Project')->where('type = 2 AND del = 0')->order('dateline DESC')->limit($Page->firstRow.','.$Page->listRows)->select();
+    
+                            $this->assign('registerList', $list);
+                            $this->assign('page', $show);
+                            $this->display();
+            }
             public function add(){
                             $this->assign('registerClass', 'active');
                             $this->assign('addClass', 'active');

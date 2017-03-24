@@ -1,7 +1,7 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
   <head>
-    <title>管理员登录--报名系统</title>
+    <title><?php echo ($voteInfo["title"]); ?>-投票结果--报名系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="/enroll_test/Public/bootstrap/css/bootstrap.min.css">
@@ -69,17 +69,54 @@
   </div>
 
 
-	<link rel="stylesheet" href="/enroll_test/Public/css/login.css" type="text/css">
-	<div class="login">
-		用户名：<input class="username" type="text" placeholder="用户名">
-		<div class="feedback"></div>
-		密码：<input class="password" type="password" placeholder="密码"> <input onclick="show_pwd_func()" class="checkbox" type="checkbox">
-		<div class="feedback"></div>
-		<div class="button">
-			<a style="text-decoration: none;" target="_blank" href="<?php echo U('User/register_index');?>"><button class="registration">注册</button></a>
-			<button class="login_button" onclick="login()">登陆</button>
-		</div>
+<div class="container">
+    <div class="rows">
+    	<div class="col-md-12">
+    	    <div class="alert alert-success" role="alert" align="center">
+    	    	<?php echo ($voteInfo["title"]); ?>
+    	    </div>
+	        <?php if(is_array($items)): foreach($items as $i=>$v): ?><div class="panel panel-default">
+	        	    <div class="panel-heading">
+	        	    	<h3 class="panel-title">
+	        	    	    <a data-toggle="collapse" href="#collapse_<?php echo ($i); ?>"><?php echo ($i+1); ?>、<?php echo ($v["title"]); ?></a>
+	        	    	</h3>
+	        	    </div>
+	        	    	<table class="table in" id="collapse_<?php echo ($i); ?>">
+	        	    		<tr>
+	        	    		    <th width="30%">选项</th>
+	        	    		    <th width="70%">投票结果</th>
+	        	    		</tr>
+	        	    		<?php if(($v["type"] == 'text') OR ($v["type"] == 'textarea')): ?><tr>
+				    	<td><?php echo ($v["options"]["0"]); ?></td>
+				    	<td>
+				    		<?php if(is_array($v['results'])): foreach($v['results'] as $j=>$vv): if(($j) == "5"): ?><div id="collapse_<?php echo ($i); ?>_hideContent" style="display: none"><?php endif; ?>
+				    		    <p><?php echo ($vv); ?></p><?php endforeach; endif; ?>
+				    		<?php if((count($v["results"])) > "5"): ?></div>
+				    		    <a class="clickToggle" href="javascript:;">点击展开</a><?php endif; ?>
+				    	</td>
+				    </tr>
+	        	    		<?php else: ?>
+	        	    		<?php if(is_array($v["options"])): foreach($v["options"] as $j=>$vv): ?><tr>
+	        	    		    <td><?php echo ($j+1); ?>、<?php echo ($vv); ?></td>
+	        	    		    <td>
+	        	    		    	<?php if(($v['results'][$j]) == "0"): ?><span>0%</span>
+	        	    		    	<?php else: ?>
+	        	    		    	<span class="progress">
+					<span class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="<?php echo (sprintf('%.2f',$v['results'][$j]*100/$v['totalVotes'])); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo (sprintf('%.2f',$v['results'][$j]*100/$v['totalVotes'])); ?>%;" min-width="20px"><?php echo (sprintf('%.2f',$v['results'][$j]*100/$v['totalVotes'])); ?>%</span>
+					</span><?php endif; ?>
+				    </td>
+				</tr><?php endforeach; endif; endif; ?>
+	        	    	</table>
+	        	</div><?php endforeach; endif; ?>
+	        <div align="center">
+	        	<a class="btn btn-info" href="<?php echo U('Show/index','proId='.$voteInfo['id']);?>">参与投票</a>
+	        </div>
 	</div>
+    </div>
+</div>
+
+
+
 
   <div align="center">  
     <footer class="about-footer" role="contentinfo">
@@ -95,5 +132,3 @@
   
   </body>
 </html>
-	<!-- 放在include后面，因为要使用include里包含的jquery -->
-    <script type="text/javascript" src="/enroll_test/Public/js/login.js"></script>
