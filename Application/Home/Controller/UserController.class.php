@@ -86,6 +86,37 @@
             $password     =     hash("sha256", $password.'HowToUseBcryptInTP?');
             $phone_number =     $_POST['phone_number'];
             $email        =     $_POST['email'];
+            // information judge
+                // empty
+            if( $username == '' ){
+                $this -> ajaxReturn( "e0" );
+            }
+            if( $password == '' ){
+                $this -> ajaxReturn( "e1" );
+            }
+            if( $phone_number == '' ){
+                $this -> ajaxReturn( "e3" );
+            }
+            if( $email == '' ){
+                $this -> ajaxReturn( "e4" );
+            }
+                // length
+            if( strlen( $username) < 4 ){
+                $this -> ajaxReturn( "lu" );
+            }
+            if( strlen( $password ) < 6 ){
+                $this -> ajaxReturn( "lp" );
+            }
+                // valid
+            $reg = '^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+[0-9]{8})$';
+            if( !ereg( $reg, $phone_number ) ){
+                $this -> ajaxReturn( 'p' );
+            }
+            $reg = '^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$';
+            if( !ereg( $reg, $email ) ){
+                $this -> ajaxReturn( "e" );
+            }
+
             $result = D('registration')
                 -> where( "username = '%s'",$username )
                 -> find();

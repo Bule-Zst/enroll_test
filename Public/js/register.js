@@ -91,20 +91,44 @@
             		'email':email
             	},
             	success: function(msg){
+            		console.log(msg);
             		if( msg == 'user' ){
             			location.href = url + "/Vote/votepage";
             		}
-            		else{
-            			if( msg == 'admin' ){
-            				location.href = url + "/Vote/index";
+            		if( msg == 'admin' ){
+            			location.href = url + "/Vote/index";
+            		}
+            		if( msg == 'u_repeat' ){
+            			$('.feedback').eq(0).html('用户名已存在！');
+            			return;
+            		}
+            		if( msg[0] == 'e' ){
+            			$('.feedback').eq(msg[1]).html('信息不能为空！');
+            			return false;
+            		}
+            		if( msg[0] == 'l' ){
+            			if( msg[1] == 'p' ){
+            				$('.feedback').eq(1).html('密码至少六个字节！');
+            				return false;
             			}
             			else{
-            				if( msg == 'u_repeat' ){
-            			               $('.feedback').eq(0).html('用户名已存在！');
-            		                             }
-            		            else  {$('.feedback').eq(0).html('未知错误');}
+            				$('.feedback').eq(0).html('用户名至少四个字节！');
+            				// console.log(1);
+            				return false;
             			}
             		}
+            		if( msg == 'p' ){
+            			$('.feedback').eq(3).html('请输入有效手机号！');
+            			return false;
+            		}
+            		if( msg == 'e' ){
+            			$('.feedback').eq(4).html('请输入有效邮箱地址！');
+            			return false;
+            		}
+            		else{
+            			$('.feedback').eq(0).html('未知错误');
+					}
+            		
             	}   
             })  
 
