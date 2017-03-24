@@ -6,16 +6,8 @@
 
     <link rel="stylesheet" href="__PUBLIC__/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="__PUBLIC__/css/style.css">
-    <link rel="stylesheet" href="__PUBLIC__/css/flipclock.css">
     <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" rel="stylesheet">
-    <script src="__PUBLIC__/js/jquery-2.1.0.min.js"></script>
-    <script src="__PUBLIC__/js/main.js"></script>
-    <style>
-        .jumbotron{
-          background-image: url("");
-          height: 350px;
-        }
-    </style>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -25,7 +17,7 @@
   </head>
   <body>
   <!-- 导航栏 Start -->
-  <nav class="navbar navbar-inverse navbar-fixed-top nav-default" role="navigation">
+  <header class="navbar navbar-inverse navbar-fixed-top bs-docs-nav" role="banner">
     <div class="container">
       <div class="navbar-header">
         <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
@@ -34,22 +26,19 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="" class="navbar-brand">报名</a>
+        <a href="{:U('Vote/votepage')}" class="navbar-brand">报名系统</a>
       </div>
-      <div class="collapse navbar-collapse bs-navbar-collapse">
-        <ul class="nav navbar-nav">
-            <li>
-              <a href=""></a>
+      <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+        <ul class="nav navbar-nav first_ul">
+            <li class="{$voteClass}">
+              <a href="{:U('Vote/votepage')}">投票</a>
             </li>
-            <li>
-              <a href=""></a>
+            <li class="{$registerClass}">
+              <a href="{:U('Register/registpage')}">报名</a>
             </li>
-            <li>
-              <a href=""></a>
-            </li>
-            <li>
-              <a href=""></a>
-            </li>
+            <!-- <li class="{$researchClass}">
+              <a href="{:U('Research/index')}">调查</a>
+            </li> -->
         </ul>
           <ul class="nav navbar-nav navbar-right">
             <if condition="$_SESSION['login_uid']">
@@ -63,9 +52,7 @@
               <li><a href="{:U('User/login')}">登录</a></li>
             </if>
           </ul>
-      </div>
+      </nav>
     </div>
-  </nav>
+  </header>
   <!-- 导航栏 End-->
-  <div class="jumbotron">
-  </div>

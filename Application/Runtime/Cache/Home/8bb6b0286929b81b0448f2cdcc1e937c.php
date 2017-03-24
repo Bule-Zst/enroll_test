@@ -48,7 +48,7 @@
                 </ul>
               </li>
             <?php else: ?>
-              <li><a href="">登录</a></li><?php endif; ?>
+              <li><a href="<?php echo U('User/login');?>">登录</a></li><?php endif; ?>
           </ul>
       </nav>
     </div>

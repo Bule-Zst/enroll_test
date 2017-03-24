@@ -126,7 +126,7 @@
 			    <th width="10%">编号排序</th>
 			    <th>选项</th>
 			</tr>
-			<?php $__FOR_START_23631__=0;$__FOR_END_23631__=1;for($i=$__FOR_START_23631__;$i < $__FOR_END_23631__;$i+=1){ ?><tr>
+			<?php $__FOR_START_3361__=0;$__FOR_END_3361__=1;for($i=$__FOR_START_3361__;$i < $__FOR_END_3361__;$i+=1){ ?><tr>
 			        <td>
 			        	<div class="input-group">
 			        	    <span class="input-group-btn">

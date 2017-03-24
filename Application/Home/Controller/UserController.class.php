@@ -17,9 +17,15 @@
     		}
     		// $_SESSION['login_uid'] = 1;
     		// $_SESSION['login_username'] = 'test';
-
+             
             if( $_SESSION['login_uid'] == 1 ){
-                $this->success('登录成功', U('Vote/index'));
+
+                if($_SESSION['login_username']==='admin'){
+
+                    $this->success('登录成功', U('Vote/index'));
+                }
+                else $this->success('登录成功', U('Vote/votepage'));
+
             }
             else{
                 $this->display();
@@ -45,12 +51,14 @@
             // $a = "bbb" == $result;
             // $this -> ajaxReturn( $a );
             if( $result ){
-                if( $result == $password ){
+                if( $result === hash("sha256", $password.'HowToUseBcryptInTP?')){
                     if(!isset($_SESSION)){
                         session_start();
                     }
                     $_SESSION['login_uid'] = 1;
-                    $this -> ajaxReturn(true);
+                    $_SESSION['login_username']=$username;
+                    if($username=='admin') {$this -> ajaxReturn('admin');}
+                    else {$this -> ajaxReturn('user');}
                 }
                 else{
                     $this -> ajaxReturn('p');
@@ -72,6 +80,7 @@
         public function register(){
             $username     =     $_POST['username'];
             $password     =     $_POST['password'];
+            $password     =     hash("sha256", $password.'HowToUseBcryptInTP?');
             $phone_number =     $_POST['phone_number'];
             $email        =     $_POST['email'];
             $result = D('registration')
@@ -92,6 +101,7 @@
                 session_start();
             }
             $_SESSION['login_uid'] = 1;
-            $this -> ajaxReturn( true );
+            $_SESSION['login_username'] =$username;
+            $this -> ajaxReturn( 'user' );
         }
     }

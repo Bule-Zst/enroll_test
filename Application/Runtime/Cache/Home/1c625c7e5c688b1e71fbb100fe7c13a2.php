@@ -1,11 +1,11 @@
 <?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
   <head>
-    <title>发起投票--报名系统</title>
+    <title>修改报名项目--妈网后台功能系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/enroll_test/Public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/enroll_test/Public/css/style.css">
+    <link rel="stylesheet" href="/Public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/Public/css/style.css">
     <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -26,7 +26,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a href="<?php echo U('Vote/index');?>" class="navbar-brand">报名系统</a>
+        <a href="<?php echo U('Vote/index');?>" class="navbar-brand">妈网后台系统</a>
       </div>
       <nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
         <ul class="nav navbar-nav first_ul">
@@ -48,7 +48,7 @@
                 </ul>
               </li>
             <?php else: ?>
-              <li><a href="">登录</a></li><?php endif; ?>
+              <li><a href="http://um.mama.cn/connect.php?action=view">登录</a></li><?php endif; ?>
           </ul>
       </nav>
     </div>
@@ -59,28 +59,27 @@
   <div class="rows">
     <div class="col-md-12 content">
     	<ul class="nav nav-tabs" role="tablist">
-    		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Vote/index');?>">投票列表</a></li>
-		<li role="presentation" class="<?php echo ($addClass); ?>"><a href="<?php echo U('Vote/add');?>">发起投票</a></li>
+    		<li role="presentation" class="<?php echo ($listClass); ?>"><a href="<?php echo U('Register/index');?>">报名列表</a></li>
+		<li role="presentation" class="<?php echo ($addClass); ?>"><a href="<?php echo U('Register/add');?>">发起报名</a></li>
+		<li role="presentation" class="<?php echo ($editClass); ?>"><a href="javascript:;">修改报名项目</a></li>
 	</ul>
 
-	<div class="addvote">
-	    <div class="alert alert-info" role="alert">请填写控制信息</div>
-	    <form class="form-horizontal" id="voteForm" role="form" method="post" action="<?php echo U('Post/index');?>">
+	<div class="addregister">
+	    <div class="alert alert-info" role="alert">请修改下列所需修改的控制信息</div>
+	    <form class="form-horizontal" id="registerUpdateForm" role="form" method="post" action="<?php echo U('Post/index');?>">
 	    	<div class="form-group">
-	    		<label for="projectTitle" class="col-sm-2 control-label">投票项目标题</label>
+	    		<label for="proTitle" class="col-sm-2 control-label">报名项目标题</label>
 	    		<div class="col-sm-5">
-	    			<!-- <div class="has-error"> -->
-	    			<input type="text" class="form-control require" name="projectTitle" id="projectTitle" placeholder="项目标题">
-	    			<!-- </div> -->
+	    			<input type="text" class="form-control require" name="proTitle" id="proTitle" placeholder="项目标题" value="<?php echo ($registerData["registerInfo"]["title"]); ?>">
 	    		</div>
 	    	</div>
 	    	<div class="form-group">
-	    		<label for="startDate" class="col-sm-2 control-label">投票时间区间</label>
-	    		    <div class="col-sm-5" id="RangeDate">
+	    		<label for="startDate" class="col-sm-2 control-label">报名时间区间</label>
+	    		    <div class="col-sm-5" id="registerRangeDate">
 		    	    	<div class="input-daterange input-group">
-    		    	        	    <input type="text" class="form-control require" id="startDate" name="startDate" />
+    		    	        	    <input type="text" class="form-control require" id="startDate" name="startDate" value="<?php echo (timestamp_to_chinese($registerData["registerInfo"]["start_time"])); ?>"/>
     		    	        	    <span class="input-group-addon">至</span>
-    		    	        	    <input type="text" class="form-control require" id="endDate" name="endDate" />
+    		    	        	    <input type="text" class="form-control require" id="endDate" name="endDate" value="<?php echo (timestamp_to_chinese($registerData["registerInfo"]["end_time"])); ?>"/>
     		    	    	</div>
     		    	    </div>
     		</div>
@@ -99,34 +98,26 @@
     			<label for="" class="col-sm-2 control-label">是否需要登录</label>
     			<div class="col-sm-5">
     			    <label class="radio-inline">
-    			    	<input type="radio" name="loginRequire" value="1" checked="checked">需要
+    			    	<input type="radio" name="loginRequire" value="1" <?php echo ($registerData['registerInfo']['login_require']?'checked':''); ?>>需要
     			    </label>
     			    <label class="radio-inline">
-    			    	<input type="radio" name="loginRequire" value="0">不需要
+    			    	<input type="radio" name="loginRequire" value="0" <?php echo ($registerData['registerInfo']['login_require']?'':'checked'); ?>>不需要
     			    </label>
     			</div>
     		</div>
-    		<div class="form-group">
-    			<label for="" class="col-sm-2 control-label">是否允许查看结果</label>
-    			<div class="col-sm-5">
-    			    <label class="radio-inline">
-    			    	<input type="radio" name="seeAble" value="1" checked="checked">允许
-    			    </label>
-    			    <label class="radio-inline">
-    			    	<input type="radio" name="seeAble" value="0">不允许
-    			    </label>
-    			</div>
-    		</div>
-		<div class="form-group">
-			<label for="" class="col-sm-2 control-label">投票规则</label>
-			<div class="col-sm-5">
-				<select name="voteRule" class="form-control">
-					<?php if(is_array($voteRule)): foreach($voteRule as $k=>$val): ?><option value="<?php echo ($k); ?>"><?php echo ($val); ?></option><?php endforeach; endif; ?>
-				</select>
-			</div>
+    		<div class="form-group" style="display: <?php echo ($registerData['registerInfo']['login_require']?'block':'none'); ?>">
+			<label for="registerRule" class="col-sm-2 control-label">允许报名次数</label>
+	    		<div class="col-sm-5">
+	    		        <div class="input-group">
+	    			<input type="text" class="form-control require" name="registerRule" id="registerRule" placeholder="允许报名的次数" value="<?php echo ($registerData["registerInfo"]["register_allow_times"]); ?>">
+	    			<span class="input-group-btn">
+	    			    <button class="btn btn-notice" type="button"><span class="glyphicon glyphicon-bullhorn"></span>   0代表无限制</button>
+	    			</span>
+	    		        </div>
+	    		</div>
 		</div>
-		<div class="alert alert-info" role="alert">
-			请添加所需投票项
+		<div class="alert alert-danger" role="alert">
+			请添加或删除报名项(提醒：修改后报名结果将置空！)
 			<button type="button" class="btn btn-default" id="addItem"><span class="glyphicon glyphicon-plus"></span>  添加新条目</button>
 		</div>
 		<table class="table table-hover" id="optionTable">
@@ -136,7 +127,7 @@
 			    <th width="10%">编号排序</th>
 			    <th>选项</th>
 			</tr>
-			<?php $__FOR_START_20043__=0;$__FOR_END_20043__=1;for($i=$__FOR_START_20043__;$i < $__FOR_END_20043__;$i+=1){ ?><tr>
+			<?php if(is_array($registerData['registerOptions'])): foreach($registerData['registerOptions'] as $i=>$v): ?><tr>
 			        <td>
 			        	<div class="input-group">
 			        	    <span class="input-group-btn">
@@ -144,32 +135,36 @@
 			        	    	</button>
 			        	    </span>
 			                <select name="childType<?php echo ($i); ?>" class="form-control">
-			                    <?php if(is_array($optionType)): foreach($optionType as $k=>$val): ?><option value="<?php echo ($k); ?>"><?php echo ($val); ?></option><?php endforeach; endif; ?>
-			                </select>
+			           	        <?php if(is_array($optionType)): foreach($optionType as $k=>$val): ?><option value="<?php echo ($k); ?>" <?php echo ($k==$v['type']?'selected':''); ?>><?php echo ($val); ?></option><?php endforeach; endif; ?>
+			           	    </select>
 			        	</div>
 			        </td>
 			        <td>
 			        	<div>
-			        	    <input type="text" class="form-control require" name="childTitle<?php echo ($i); ?>" placeholder="标题" />
+			        	    <input type="text" class="form-control require" name="childTitle<?php echo ($i); ?>" placeholder="标题" value="<?php echo ($v["title"]); ?>"/>
 			        	</div>
 			        <td>
 			        	<div>
-			        	    <input type="text" class="form-control require" name="childRange<?php echo ($i); ?>" placeholder="排序" value="1"/>
+			        	    <input type="text" class="form-control require" name="childRange<?php echo ($i); ?>" placeholder="排序" value="<?php echo ($v["range"]); ?>"/>
 			        	</div>
 			        </td>
 			        <td>
-			        	    <div class="input-group">
-			        	        <input type="text" class="form-control require" name="childOption<?php echo ($i); ?>_1" placeholder="选项1"/>
+			        	<?php if(($v['type'] == 'text') OR ($v['type'] == 'textarea')): ?><input type="text" class="form-control" placeholder="不可用" disabled/>
+			        	    <?php else: ?>
+			        	    <?php if(is_array($v['options'])): foreach($v['options'] as $i=>$val): ?><div class='input-group'>
+			        	    	    <input type="text" class="form-control require" name="childOption<?php echo ($i); ?>_1" placeholder="选项<?php echo ($i+1); ?>" value="<?php echo ($val); ?>"/>
+			        	    	<?php echo ($i==$v['option_count']-1?'':'<span class="input-group-btn"><button class="btn btn-danger deleteOption" type="button" data-toggle="tooltip" data-placement="right" title="删除一个子选项">删除</button></span></div>'); endforeach; endif; ?>
 			        	        <span class="input-group-btn">
 			        	            <button class="btn btn-info addOption" type="button" data-toggle="tooltip" data-placement="right" title="新建一个子选项">添加
 			        	            </button>
 			        	        </span>
 			        	    </div>
-			        </td>
-			    </tr><?php } ?>
+			        	</eq><?php endif; ?>
+			    </tr><?php endforeach; endif; ?>
 		</table>
-		<input type="hidden" id="optionNum" name="optionNum" value="1" />
-		<input type="hidden" name="formActionType" value="newVote" />
+		<input type="hidden" name="proId" value="<?php echo ($registerId); ?>" />
+		<input type="hidden" id="optionNum" name="optionNum" value="<?php echo ($optonsCount); ?>" />
+		<input type="hidden" name="formActionType" value="updateRegister" />
 		<div align="center">
 		    <button type="submit" class="btn btn-primary btn-lg">生成表单</button>
 		</div>
@@ -185,9 +180,9 @@
       </div>
     </footer>
   </div>
-  <script src="/enroll_test/Public/js/jquery-2.1.0.min.js"></script>
-  <script src="/enroll_test/Public/bootstrap/js/bootstrap.min.js"></script>
-  <script src="/enroll_test/Public/js/main.js"></script>
+  <script src="/Public/js/jquery-2.1.0.min.js"></script>
+  <script src="/Public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/Public/js/main.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/js/bootstrap-datepicker.min.js"></script>
   <script src="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/js/locales/bootstrap-datepicker.zh-CN.min.js"></script>
 
