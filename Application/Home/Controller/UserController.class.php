@@ -17,7 +17,6 @@
             }
             // $_SESSION['login_uid'] = 1;
             // $_SESSION['login_username'] = 'test';
-             
             if( $_SESSION['login_uid'] ){
 
                $Common = D('Common');
@@ -29,6 +28,7 @@
 
             }
             else{
+                $this->assign("user",$_SESSION['status']);
                 $this->display();
             }
         }
@@ -44,14 +44,14 @@
         //  p: password is wrong
         //
         public function login_check(){
-            // $this -> ajaxReturn( 10 );
+ 
             $username = I('post.username');
-            $password = $_POST['password'];
+            $password = I('post.password');
+ 
             $result = D('registration')
                 -> where( "username = '%s'",$username )
                 -> getField( 'password' );
-            // $a = "bbb" == $result;
-            // $this -> ajaxReturn( $a );
+            $_SESSION['status']=0;
             if( $result ){
                 if( $result === hash("sha256", $password.'HowToUseBcryptInTP?')){
                     if(!isset($_SESSION)){
@@ -62,14 +62,32 @@
                     $power = D('registration')
                         -> where(  "username = '%s'",$username  )
                         -> getField( 'power' );
-                    if($power===hash('sha256', 'admin')) { $this->redirect('Vote/index');}
-                    else {$this -> redirect('Vote/votepage');}
-                }
+ 
+                     
+ 
+                    if($power === hash('sha256', 'admin')) {
+                            $this->redirect('Vote/index');
+                         }
+                    else {
+                        $this->redirect('Vote/votepage');
+                    }
+ 
+                   }
                 else{
-                    $this -> ajaxReturn('p');
+                    $_SESSION['status']=1;
+                    $this->redirect('User/login');
+                    
                 }
+                
             }
-         else   $this -> ajaxReturn('u');
+            else{
+                  $_SESSION['status']=1;
+                   $this->redirect('User/login');
+                 }
+ 
+         
+            
+ 
         }
 
         public function register_index(){
