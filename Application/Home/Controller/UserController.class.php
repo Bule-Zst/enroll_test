@@ -29,6 +29,7 @@
             }
             else{
                 $this->assign("user",$_SESSION['status']);
+                $this->assign('username',$_SESSION['tempname']);
                 $this->display();
             }
         }
@@ -75,6 +76,7 @@
                    }
                 else{
                     $_SESSION['status']=1;
+                    $_SESSION['tempname']=$username;
                     $this->redirect('User/login');
                     
                 }
@@ -82,6 +84,7 @@
             }
             else{
                   $_SESSION['status']=1;
+                  $_SESSION['tempname']=$username;
                    $this->redirect('User/login');
                  }
  
@@ -101,87 +104,125 @@
     		session_destroy();
     		$this->success('退出登录', U('User/index'));
     	}
-        public function adminregist(){
-            $username     =     $_POST['username'];
-            $adminpwd     =     $_POST['adminpwd'];
-            $adminpwd     =     hash("sha256", $adminpwd.'HowToUseBcryptInTP?');
-            $password     =     $_POST['password'];
-            $password     =     hash("sha256", $password.'HowToUseBcryptInTP?');
-            $phone_number =     $_POST['phone_number'];
-            $email        =     $_POST['email'];
-            
+        public function adregister(){
+            $username     =     I('post.username');
+            $password     =     I('post.password');
+            $repassword   =     I('post.repassword');
+            $adminpwd     =     I('post.adminpwd');
+            $phone_number =     I('phone_number');
+            $email        =     I('email');
+            $data = [
+                    "username"     =>   $username,
+                    "password"     =>   $password,
+                    "repassword"   =>   $repassword,
+                    'phone_number' =>   $phone_number,
+                    'email'        =>   $email,
+                    'power'        =>   ''
+            ];
+    $rules = array(
+     array('username','require','用户名必须！'), // 用户名必须
+     array('username','','帐号名称已经存在！',1,'unique',1), // 验证用户名是否已经存在
+     array('username','4,30','用户名长度不正确',0,'length'),
+     array('email','email','Email格式错误！',2), // 如果输入则验证Email格式是否正确
+     array('password','6,64','密码长度不正确',0,'length'), // 验证密码是否在指定长度范围
+     array('repassword','password','确认密码不一致',0,'confirm'), // 验证确认密码是否和密码一致     
+   );
 
-            $result = D('registration')
-                -> where( "username = '%s'",$username )
-                -> find();
-            if( $result ){
-                $this -> ajaxReturn( 'u_repeat' );
-            }
-            else{
+                $adminpwd=  hash("sha256", $adminpwd.'HowToUseBcryptInTP?');
                 $isadmin =  D( 'Common' ) -> isAdmin();
                 $adname  =  $_SESSION['login_username'];
                 $adpass  =  D('registration')
                              -> where( "username = '%s'",$adname )
                              -> getField( 'password' );
                 $check   =   $adminpwd===$adpass;
-                if( $isadmin && $check ){
+        if( $isadmin && $check ){
                 $power = hash( "sha256", 'admin' );
-                $data = [
-                    "username"     =>   $username,
-                    "password"     =>   $password,
-                    'phone_number' =>   $phone_number,
-                    'email'        =>   $email,
-                    'power'        =>   $power
-                ];
-                 D('registration')
-                      -> add( $data );
-                   
-                 if(!isset($_SESSION)){
+                $registration=M("registration");
+                
+            if(!$registration->validate($rules)->create($data)){
+                   // exit($registration->getError());
+                   $statue=$registration->getError();
+                    $this->assign('statue',$statue);
+                    $this->assign('data',$data);
+                    $this->display();
+                 }
+            else{
+                  $data['password']=hash("sha256", $password.'HowToUseBcryptInTP?');
+                  $data['power']=$power;
+                  $registration->add($data);
+                  if(!isset($_SESSION)){
                      session_start();
                     }
                  $_SESSION['login_uid'] = 1;
                  $_SESSION['login_username'] =$username;
-             //    if( $power ){
-                 $this -> ajaxReturn( 'admin' );
-              //      }
-              //   else{
-              //  $this -> ajaxReturn( 'user' );
-            //     }
+                 $this->redirect('Vote/index');
+               }
+    
              }
-             else{$this -> ajaxReturn( 'powererr' );}
-            }
+        else{ $this->assign('statue','当前管理员用户名或密码错误');  
+              $this->assign('data',$data);
+              $this->display(); 
+          }
+           
         }
         public function register(){
-            $username     =     $_POST['username'];
-            $password     =     $_POST['password'];
-            $password     =     hash("sha256", $password.'HowToUseBcryptInTP?');
-            $phone_number =     $_POST['phone_number'];
-            $email        =     $_POST['email'];
-            $result = D('registration')
-                -> where( "username = '%s'",$username )
-                -> find();
-            if( $result ){
-                $this -> ajaxReturn( 'u_repeat' );
-            }
-            else{
+            $username     =     I('post.username');
+            $password     =     I('post.password');
+            $repassword   =     I('post.repassword');
+            $phone_number =     I('phone_number');
+            $email        =     I('email');
+             
+          //  $result = D('registration')
+            //    -> where( "username = '%s'",$username )
+              //  -> find();
+           // if( $result ){
+             //       $_SESSION['status']=2;
+               //     $this->redirect('User/register_index');
+           // }
+       //     else{
+     $rules = array(
+     array('username','require','用户名必须！'), // 用户名必须
+     array('username','','帐号名称已经存在！',1,'unique',1), // 验证用户名是否已经存在
+     array('username','4,30','用户名长度不正确',0,'length'),
+     array('email','email','Email格式错误！',2), // 如果输入则验证Email格式是否正确
+     array('password','6,64','密码长度不正确',0,'length'), // 验证密码是否在指定长度范围
+     array('repassword','password','确认密码不一致',0,'confirm'), // 验证确认密码是否和密码一致     
+   );
+                $registration=M("registration");
                 $data = [
                     "username"     =>   $username,
                     "password"     =>   $password,
+                    "repassword"   =>   $repassword,
                     'phone_number' =>   $phone_number,
                     'email'        =>   $email
                 ];
-            
-                 D('registration')
-                      -> add( $data );
-                 if(!isset($_SESSION)){
+                if(!$registration->validate($rules)->create($data)){
+                   // exit($registration->getError());
+                   $statue=$registration->getError();
+                    $this->assign('statue',$statue);
+                    $this->assign('data',$data);
+                    $this->display();
+                 }
+                 else{
+                    $data['password']=hash("sha256", $password.'HowToUseBcryptInTP?');
+                    $registration->add($data);
+                    if(!isset($_SESSION)){
                      session_start();
                     }
                  $_SESSION['login_uid'] = 1;
                  $_SESSION['login_username'] =$username;
+                     $this->redirect('Vote/votepage');
+                 }
+           //           -> add( $data );
+         //        if(!isset($_SESSION)){
+           //          session_start();
+          //          }
+          //       $_SESSION['login_uid'] = 1;
+             //    $_SESSION['login_username'] =$username;
+           //       
                   
-                  
-                $this -> ajaxReturn( 'user' );
+           //     $this -> ajaxReturn( 'user' );
                  
-            }
+          //  }
         }
     }

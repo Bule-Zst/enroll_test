@@ -4,16 +4,16 @@
     <title><?php echo ($voteInfo["title"]); ?>-投票结果--报名系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/enroll_test/Public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/enroll_test/Public/css/style.css">
-    <link rel="stylesheet" href="/enroll_test/Public/css/flipclock.css">
+    <link rel="stylesheet" href="/999/enroll_test/Public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/999/enroll_test/Public/css/style.css">
+    <link rel="stylesheet" href="/999/enroll_test/Public/css/flipclock.css">
     <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" rel="stylesheet">
-    <script src="/enroll_test/Public/js/jquery-2.1.0.min.js"></script>
-    <script src="/enroll_test/Public/js/main.js"></script>
+    <script src="/999/enroll_test/Public/js/jquery-2.1.0.min.js"></script>
+    <script src="/999/enroll_test/Public/js/main.js"></script>
     <style>
         .jumbotron{
           background-image: url("");
-          height: 350px;
+          height: 10px;
         }
     </style>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -128,7 +128,7 @@
     </footer>
   </div>
   
-  <script src="/enroll_test/Public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/999/enroll_test/Public/bootstrap/js/bootstrap.min.js"></script>
   
   </body>
 </html>

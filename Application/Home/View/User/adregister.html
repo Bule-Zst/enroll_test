@@ -1,24 +1,26 @@
 <include file="Public/header_show" title="管理员登录" />
 	
 	<link rel="stylesheet" href="__PUBLIC__/css/register.css" type="text/css">
+	<form  class="login" method="POST" action="{:U('User/adregister')}" >
 	<div class="box">
-		用户名：<input class="username input" type="text" placeholder="用户名"> 至少四个字节
+		用户名：<input class="username " type="text" placeholder="用户名" name="username" value="{$data['username']}"> 至少四个字节
 		<div class="feedback"></div>
-		密码：<input class="password input" type="password" placeholder="密码"> <input onclick="show_pwd()" type="checkbox"> 至少六个字节
+		密码：<input class="password " type="password" placeholder="密码" name="password" value="{$data['password']}">   至少六个字节
 		<div class="feedback"></div>
-		确认密码：<input class="password_repeat input" type="password" placeholder="确认密码"> <input onclick="show_repeat()" type="checkbox">
+		确认密码：<input class="repassword " type="password" placeholder="确认密码" name="repassword" value="{$data['repassword']}">  
 		<div class="feedback"></div>
-		当前管理员密码：<input class="adminpwd input" type="password" placeholder="密码"> <input onclick="show_pwd_func()" class="checkbox" type="checkbox">注意您正在创建一个新的管理员
+		手机号：<input class="phone_number " type="text" placeholder="手机号" name="phone_number" value="{$data['phone_number']}">
 		<div class="feedback"></div>
-		手机号：<input class="phone_number input" type="text" placeholder="手机号">
+		邮箱：<input class="email " type="text" placeholder="邮箱" name="email" value="{$data['email']}">
 		<div class="feedback"></div>
-		邮箱：<input class="email input" type="text" placeholder="邮箱">
+		当前管理员密码：<input class="adminpwd " type="password" placeholder="密码" name="adminpwd" >  <br>注意您正在创建一个新的管理员!
 		<div class="feedback"></div>
+		{$statue}
 		<div class="button">
-			<button onclick="adregister()">注册</button>
+	        <button type="submit" class="btn btn-primary" id="align-center">注册</button> 
+            <button type="button" class="btn btn-primary" id="align-center" onClick="location.href='login'" >返回</button>
 		</div>
 	</div>
 
 <include file="Public/footer_show" />
 	
-	<script type="text/javascript" src="__PUBLIC__/js/adregister.js"></script>
