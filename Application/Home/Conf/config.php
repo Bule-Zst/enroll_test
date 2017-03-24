@@ -5,7 +5,7 @@ return array(
 	'DB_HOST' => '127.0.0.1',
 	'DB_NAME' => 'enroll_test',
 	'DB_USER' => 'root',
-	'DB_PWD' => 'APTX4869',
+	'DB_PWD' => 'zstzxnsj123',
 	'DB_PORT' => '3306',
 	'DB_PREFIX' => '',
 	'DB_CHARSET'=> 'utf8',

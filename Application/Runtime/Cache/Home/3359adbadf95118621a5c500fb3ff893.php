@@ -4,12 +4,12 @@
     <title>管理员登录--报名系统</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="/999/enroll_test/Public/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/999/enroll_test/Public/css/style.css">
-    <link rel="stylesheet" href="/999/enroll_test/Public/css/flipclock.css">
+    <link rel="stylesheet" href="/enroll_test/Public/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/enroll_test/Public/css/style.css">
+    <link rel="stylesheet" href="/enroll_test/Public/css/flipclock.css">
     <link href="http://cdn.bootcss.com/bootstrap-datepicker/1.3.0/css/datepicker3.min.css" rel="stylesheet">
-    <script src="/999/enroll_test/Public/js/jquery-2.1.0.min.js"></script>
-    <script src="/999/enroll_test/Public/js/main.js"></script>
+    <script src="/enroll_test/Public/js/jquery-2.1.0.min.js"></script>
+    <script src="/enroll_test/Public/js/main.js"></script>
     <style>
         .jumbotron{
           background-image: url("");
@@ -59,7 +59,7 @@
                 </ul>
               </li>
             <?php else: ?>
-              <li><a href="<?php echo U('User/login');?>">登录</a></li><?php endif; ?>
+              <li><a href="">登录</a></li><?php endif; ?>
           </ul>
       </div>
     </div>
@@ -69,7 +69,7 @@
   </div>
 
 	
-	<link rel="stylesheet" href="/999/enroll_test/Public/css/register.css" type="text/css">
+	<link rel="stylesheet" href="/enroll_test/Public/css/register.css" type="text/css">
 	<div class="box">
 		用户名：<input class="username input" type="text" placeholder="用户名"> 至少四个字节
 		<div class="feedback"></div>
@@ -96,9 +96,9 @@
     </footer>
   </div>
   
-  <script src="/999/enroll_test/Public/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/enroll_test/Public/bootstrap/js/bootstrap.min.js"></script>
   
   </body>
 </html>
 	
-	<script type="text/javascript" src="/999/enroll_test/Public/js/register.js"></script>
+	<script type="text/javascript" src="/enroll_test/Public/js/register.js"></script>
