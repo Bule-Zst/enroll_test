@@ -117,6 +117,11 @@
             }
             $_SESSION['login_uid'] = 1;
             $_SESSION['login_username'] =$username;
-            $this -> ajaxReturn( 'user' );
+            if( $power ){
+                $this -> ajaxReturn( 'admin' );
+            }
+            else{
+                $this -> ajaxReturn( 'user' );
+            }
         }
     }
