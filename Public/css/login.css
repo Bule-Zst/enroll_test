@@ -13,7 +13,8 @@
 .login input{
 	margin-bottom: 10px;
 	display: inline-block;
-	width: 60%;
+	padding-left: 7px;
+	width: 65%;
 }
 .login .checkbox{
 	width: 20px;
@@ -39,12 +40,8 @@
 .login .button{
 	position: relative;
 	left: -10px;
-	height: 30px;
-}
-.login .button{
-	margin-top: 5px;
+	top: -5px;
+	margin-bottom: 20px;
+	margin-top: 13px;
 	text-align: center;
-}
-.login .button .login_button{
-	margin-left: 40px;
 }

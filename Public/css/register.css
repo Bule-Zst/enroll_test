@@ -1,11 +1,14 @@
 .box{
 	border:1px solid black;
-	padding-left: 10px;
+	padding-left: 15px;
 	width: 400px;
 	padding-top: 5px;
 	position: relative;
 	left: 50%;
 	margin-left: -200px;
+}
+.box .username{
+	margin-top: 10px;
 }
 .box .feedback{
 	width: 100%;
@@ -14,11 +17,16 @@
 }
 .box input{
 	margin-top: 5px;
+	padding-left: 5px;
 }
 .box .button{
 	text-align: center;
 }
 .box .button button{
-	margin-bottom: 5px;
+	margin-bottom: 10px;
 	width: 100px;
+}
+.box .error{
+	color: red;
+	margin: 3px 0px;
 }
