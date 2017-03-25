@@ -109,8 +109,8 @@
             $password     =     I('post.password');
             $repassword   =     I('post.repassword');
             $adminpwd     =     I('post.adminpwd');
-            $phone_number =     I('phone_number');
-            $email        =     I('email');
+            $phone_number =     I('post.phone_number');
+            $email        =     I('post.email');
             $data = [
                     "username"     =>   $username,
                     "password"     =>   $password,
@@ -169,8 +169,8 @@
             $username     =     I('post.username');
             $password     =     I('post.password');
             $repassword   =     I('post.repassword');
-            $phone_number =     I('phone_number');
-            $email        =     I('email');
+            $phone_number =     I('post.phone_number');
+            $email        =     I('post.email');
              
           //  $result = D('registration')
             //    -> where( "username = '%s'",$username )
